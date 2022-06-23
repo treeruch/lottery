@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+
+<head>
+  <title>LOTTERY</title>
+    <th:block th:replace="layouts/fragments/scriptResources"></th:block>
+</head>
+<body>
+        <div class="wrapper">
+        <div th:replace="layouts/fragments/header :: header"> </div>
+        <div th:replace="layouts/fragments/leftSide :: leftSide"> </div>
+        <th:block layout:fragment="content"></th:block> 
+     </div>
+ </body>
+ <footer class="main-footer" style="text-align: right;">
+    <div class="float-right d-none d-sm-block">
+    </div>
+    <strong>* พบปัญหาติดต่อ : <a href="https://www.facebook.com/noomsakee">Noom Sake</a>  , <a href="https://www.facebook.com/Teeruch2538">Developer </a></strong> 
+  </footer>
+</html>
