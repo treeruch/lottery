@@ -188,6 +188,12 @@ public class LotteryService {
 			list.add(obj);
 			
 			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("312");
+			obj.setTodPrice(300);
+			list.add(obj);
+			
+			obj = new LotteryModel();
 			obj.setTodStr("456");
 			obj.setTod("456");
 			obj.setTodPrice(50);
