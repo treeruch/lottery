@@ -32,16 +32,13 @@ public class UtilService {
 	}
 
 	public void headerDashBoard(ModelAndView modelview, List<Lottery> listDashBoard) {
-		for (Lottery obj : listDashBoard) {
-			modelview.addObject("sumTopThree", this.formatPrice(obj.getTopThreePrice()));
-			modelview.addObject("sumTod", this.formatPrice(obj.getTodPrice()));
-			modelview.addObject("sumTopTwo", this.formatPrice(obj.getTopTwoPrice()));
-			modelview.addObject("sumUnderTwo", this.formatPrice(obj.getUnderTwoPrice()));
-			modelview.addObject("sumRun", this.formatPrice(obj.getRunPrice()));
-			modelview.addObject("sumUnderRun", this.formatPrice(obj.getUnderRunPrice()));
-			modelview.addObject("sumlottery", this.formatPrice(obj.getTopThreePrice() + obj.getTodPrice()
-					+ obj.getTopTwoPrice() + obj.getUnderTwoPrice() + obj.getRunPrice() + obj.getUnderRunPrice()));
-		}
+			modelview.addObject("sumTopThree", "500");
+			modelview.addObject("sumTod", "1,000");
+			modelview.addObject("sumTopTwo", "1,500");
+			modelview.addObject("sumUnderTwo", "2,000");
+			modelview.addObject("sumRun", "2,500");
+			modelview.addObject("sumUnderRun", "3,000");
+			modelview.addObject("sumlottery", "11,500");
 	}
 
 	public void random6(Object[] obj, String tod) {

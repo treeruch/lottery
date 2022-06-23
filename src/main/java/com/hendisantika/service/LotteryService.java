@@ -31,60 +31,42 @@ public class LotteryService {
 	}
 	
 	public List<Lottery> LotteryTopThree(String startDate, String endDate) throws Exception {
-		return  new ArrayList<>();
+		List<Lottery> list = new ArrayList<Lottery>();
+		list = this.three();
+		return list;
 	}
 
-	public List<LotteryModel> LotteryTod(String startDate, String endDate, List<String> list) {
-
-		List<Object[]> listArrayObject = new ArrayList<>();
-		List<Lottery> listlottery = new ArrayList<>();
-		List<LotteryModel> listLotteryModels = new ArrayList<>();
-		LotteryModel objModel = new LotteryModel();
+	private List<Lottery> three() {
+		List<Lottery> list = new ArrayList<Lottery>();
+		int a = 100;
+		int b = 100;
+			for(int i = 0 ; i < 20 ;i++ ) {
+				Lottery obj = new Lottery();
+				obj.setTopThree(String.valueOf(a++));
+				obj.setTopThreePrice(b+5);
+				list.add(obj);
+			}
 		
-		/*Object[] obj = new Object[6];
-		try {
-			
-			if(list.size() == 0) {
-				listlottery = lotteryRepository.LotteryTod(startDate,endDate,null);
-				for (Lottery ls : listlottery) {
-					objModel = new LotteryModel();
-					objModel.setTod(ls.getTod());
-					objModel.setTodPrice(ls.getTodPrice());
-					listLotteryModels.add(objModel);
-				}
-				return  listLotteryModels;
-			}
-			
-			for(String tod: list) {
-				if(tod.length() == 3) {
-					obj = new Object[6];
-					utilService.random6(obj,tod);
-					listArrayObject.add(obj);
-				} 
-			}
-			
-			for(int i = 0 ; i < listArrayObject.size() ; i++){
-				listlottery = lotteryRepository.LotteryTod(startDate,endDate,listArrayObject.get(i));
-				
-				for(int j = 0 ; j < listlottery.size() ; j++ ) {
-					objModel = new LotteryModel();
-					if(j == 0) {
-						Object[] obJect = listArrayObject.get(i);
-						String key = (String) obJect[0];
-						objModel.setTodStr(key);
-					} else {
-						objModel.setTodStr("");
-					}
-					objModel.setTod(listlottery.get(j).getTod());
-					objModel.setTodPrice(listlottery.get(j).getTodPrice());
-					listLotteryModels.add(objModel);
-				}
-			} 
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} */
-		return  listLotteryModels;
+		return list;
+	}
+
+	public List<LotteryModel> LotteryTod(String startDate, String endDate, List<String> list1) {
+		List<LotteryModel> list = new ArrayList<LotteryModel>();
+		list = this.tod();
+		return list;
+	}
+
+	private List<LotteryModel> tod() {
+		List<LotteryModel> list = new ArrayList<LotteryModel>();
+		int a = 100;
+		int b = 100;
+		for(int i = 0 ; i < 20 ;i++ ) {
+			LotteryModel obj = new LotteryModel();
+			obj.setTod(String.valueOf(a++));
+			obj.setTodPrice(b+5);
+			list.add(obj);
+	}
+		return list;
 	}
 
 	public List<Lottery> LotteryTopTwo(String startDate, String endDate) {
@@ -118,6 +100,83 @@ public class LotteryService {
 	public void deleteLotter(Long id) throws Exception {
 		
 		
+	}
+
+	public List<LotteryModel> LotteryTodSearch(String startDate, String endDate, List<String> list1) {
+		List<LotteryModel> list = new ArrayList<LotteryModel>();
+			LotteryModel obj = new LotteryModel();
+			obj.setTodStr("123");
+			obj.setTod("123");
+			obj.setTodPrice(50);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("132");
+			obj.setTodPrice(100);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("213");
+			obj.setTodPrice(150);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("231");
+			obj.setTodPrice(200);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("321");
+			obj.setTodPrice(250);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("456");
+			obj.setTod("456");
+			obj.setTodPrice(50);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("465");
+			obj.setTodPrice(100);
+			list.add(obj);
+			
+		     obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("546");
+			obj.setTodPrice(150);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("564");
+			obj.setTodPrice(200);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("645");
+			obj.setTodPrice(250);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("");
+			obj.setTod("654");
+			obj.setTodPrice(300);
+			list.add(obj);
+			
+			obj = new LotteryModel();
+			obj.setTodStr("111");
+			obj.setTod("111");
+			obj.setTodPrice(100);
+			list.add(obj);
+		return list;
+	
 	}
 	
 	

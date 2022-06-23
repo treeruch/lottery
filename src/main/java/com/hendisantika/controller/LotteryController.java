@@ -420,33 +420,25 @@ public class LotteryController {
 			List<String> list = new ArrayList<>();
 			if(null != lottery.getTodStrfilter()) {
 				  String[] arrayFilter = lottery.getTodStrfilter();
-				  for(int i = 0 ; i< arrayFilter.length ; i++) {
-					  list.add(arrayFilter[i]);
+				  if(arrayFilter.length > 0) {
+					  List<LotteryModel> listTod = lotteryService.LotteryTodSearch(startDate, endDate, list);
+						modelview.addObject("checkFilter", "haveData");
+						session.setAttribute("checkListTodFilter", "haveData");
+						session.setAttribute("listTodFilter", listTod);
+						modelview.addObject("listTodFilter", listTod);
+				  } else {
+					  modelview.addObject("checkFilter", "");
+					  List<LotteryModel> listTod1 = lotteryService.LotteryTod(startDate, endDate, list);
+						session.setAttribute("checkListTodFilter", null);
+						session.setAttribute("listTodFilter", listTod1);
+						session.setAttribute("listData", listTod1);
+						modelview.addObject("listTodFilter", listTod1);
 				  }
 			}
 			
-			
-			List<LotteryModel> listTod = new ArrayList<>();
-			if(list.size() > 0) {
-				listTod = lotteryService.LotteryTod(startDate, endDate, list);
-				modelview.addObject("checkFilter", "haveData");
-				session.setAttribute("checkListTodFilter", "haveData");
-				session.setAttribute("listTodFilter", listTod);
-			} else {
-				modelview.addObject("checkFilter", "");
-				listTod = lotteryService.LotteryTod(startDate,endDate,new ArrayList<String>());
-				session.setAttribute("checkListTodFilter", null);
-				session.setAttribute("listTodFilter", listTod);
-				session.setAttribute("listData", listTod);
-			}
-	        
 			modelview.addObject("startDate",startDate);
 			modelview.addObject("endDate",endDate);
 			modelview.addObject("todPrice",lottery.getTodPrice());
-			
-			List<Lottery> listTod1 = new ArrayList<>();
-			modelview.addObject("listTod", listTod1);
-			modelview.addObject("listTodFilter", listTod);
 			
 			modelview.addObject("startAndEndDate", startDate + " - "+endDate);
 			session.setAttribute("startDateEndDate", startDate + " - "+endDate);
