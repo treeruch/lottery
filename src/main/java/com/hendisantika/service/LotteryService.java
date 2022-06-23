@@ -1,6 +1,7 @@
 package com.hendisantika.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +44,7 @@ public class LotteryService {
 			for(int i = 0 ; i < 20 ;i++ ) {
 				Lottery obj = new Lottery();
 				obj.setTopThree(String.valueOf(a++));
-				obj.setTopThreePrice(b+5);
+				obj.setTopThreePrice(b+=5);
 				list.add(obj);
 			}
 		
@@ -63,7 +64,7 @@ public class LotteryService {
 		for(int i = 0 ; i < 20 ;i++ ) {
 			LotteryModel obj = new LotteryModel();
 			obj.setTod(String.valueOf(a++));
-			obj.setTodPrice(b+5);
+			obj.setTodPrice(b+=5);
 			list.add(obj);
 	}
 		return list;
@@ -76,7 +77,7 @@ public class LotteryService {
 			for(int i = 0 ; i < 20 ;i++ ) {
 				Lottery obj = new Lottery();
 				obj.setTopTwo(String.valueOf(a++));
-				obj.setTopTwoPrice(b+5);
+				obj.setTopTwoPrice(b+=5);
 				list.add(obj);
 			}
 		
@@ -90,7 +91,7 @@ public class LotteryService {
 			for(int i = 0 ; i < 20 ;i++ ) {
 				Lottery obj = new Lottery();
 				obj.setUnderTwo(String.valueOf(a++));
-				obj.setUnderTwoPrice(b+5);
+				obj.setUnderTwoPrice(b+=5);
 				list.add(obj);
 			}
 		
@@ -104,7 +105,7 @@ public class LotteryService {
 			for(int i = 0 ; i < 9 ;i++ ) {
 				Lottery obj = new Lottery();
 				obj.setRun(String.valueOf(a++));
-				obj.setRunPrice(b+5);
+				obj.setRunPrice(b+=5);
 				list.add(obj);
 			}
 		
@@ -118,7 +119,7 @@ public class LotteryService {
 			for(int i = 0 ; i < 9 ;i++ ) {
 				Lottery obj = new Lottery();
 				obj.setUnderRun(String.valueOf(a++));
-				obj.setUnderRunPrice(b+5);
+				obj.setUnderRunPrice(b+=5);
 				list.add(obj);
 			}
 		
@@ -126,7 +127,27 @@ public class LotteryService {
 	}
 
 	public List<HistoryModel> getHistory(String startDate, String endDate) throws Exception {
-		return new ArrayList<HistoryModel>();
+		List<HistoryModel> list = new ArrayList<HistoryModel>();
+		int a = 1000;
+		int b = 1000;
+		int c = 1000;
+		int d = 1000;
+		int e = 1000;
+		int f = 1000;
+		
+		for(int i = 0 ; i< 5 ;i++) {
+			HistoryModel obj = new HistoryModel();
+			obj.setCreateDate("2022-06-24");
+			obj.setSumTopThreePrice(a+=50);
+			obj.setSumTodPrice(b+=50);
+			obj.setSumTopTwoPrice(c+=50);
+			obj.setSumUnderTwoPrice(d+=50);
+			obj.setSumRunPrice(e+=50);
+			obj.setSumUnderRunPrice(f+=50);
+			obj.setSumPrice(a+b+c+d+e+f);
+			list.add(obj);
+		}
+		return list;
 	}
 
 	public void deleteLotter(Long id) throws Exception {

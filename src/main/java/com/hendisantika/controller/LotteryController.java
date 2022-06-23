@@ -150,7 +150,7 @@ public class LotteryController {
 			modelview.addObject("startDate",startDate);
 			modelview.addObject("endDate",endDate);
 			
-			List<HistoryModel> history = new ArrayList<HistoryModel>();
+			List<HistoryModel> history = lotteryService.getHistory(startDate,endDate);
 			modelview.addObject("listHistory",history);
 			modelview.setViewName(VIEW_HISTORY);
 		} catch (Exception e) {
