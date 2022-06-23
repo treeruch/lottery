@@ -70,27 +70,59 @@ public class LotteryService {
 	}
 
 	public List<Lottery> LotteryTopTwo(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
+		List<Lottery> list = new ArrayList<Lottery>();
+		int a = 11;
+		int b = 0;
+			for(int i = 0 ; i < 20 ;i++ ) {
+				Lottery obj = new Lottery();
+				obj.setTopTwo(String.valueOf(a++));
+				obj.setTopTwoPrice(b+5);
+				list.add(obj);
+			}
+		
+		return list;
 	}
 
 	public List<Lottery> LotteryUnderTwo(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
-	}
-
-	public List<Lottery> LotteryUnderTwoPrice(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
+		List<Lottery> list = new ArrayList<Lottery>();
+		int a = 11;
+		int b = 0;
+			for(int i = 0 ; i < 20 ;i++ ) {
+				Lottery obj = new Lottery();
+				obj.setUnderTwo(String.valueOf(a++));
+				obj.setUnderTwoPrice(b+5);
+				list.add(obj);
+			}
+		
+		return list;
 	}
 
 	public List<Lottery> LotteryRun(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
-	}
-
-	public List<Lottery> LotteryRunPrice(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
+		List<Lottery> list = new ArrayList<Lottery>();
+		int a = 1;
+		int b = 0;
+			for(int i = 0 ; i < 9 ;i++ ) {
+				Lottery obj = new Lottery();
+				obj.setRun(String.valueOf(a++));
+				obj.setRunPrice(b+5);
+				list.add(obj);
+			}
+		
+		return list;
 	}
 
 	public List<Lottery> LotteryUnderRun(String startDate, String endDate) {
-		return new ArrayList<Lottery>();
+		List<Lottery> list = new ArrayList<Lottery>();
+		int a = 1;
+		int b = 0;
+			for(int i = 0 ; i < 9 ;i++ ) {
+				Lottery obj = new Lottery();
+				obj.setUnderRun(String.valueOf(a++));
+				obj.setUnderRunPrice(b+5);
+				list.add(obj);
+			}
+		
+		return list;
 	}
 
 	public List<HistoryModel> getHistory(String startDate, String endDate) throws Exception {
